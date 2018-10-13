@@ -70,7 +70,6 @@ public List<CompilationUnit> getTestCompilationUnits() {
 		
 		config.addImportedType("org.junit.Test");
 		config.addImportedType("org.junit.runner.RunWith");
-		config.addImportedType("org.springframework.beans.factory.annotation.Autowired");
 		config.addImportedType("org.springframework.boot.test.context.SpringBootTest");
 		config.addImportedType("org.springframework.test.context.junit4.SpringRunner");
 			

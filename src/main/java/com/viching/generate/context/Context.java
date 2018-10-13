@@ -9,6 +9,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 import java.util.StringTokenizer;
 
@@ -190,6 +191,12 @@ public class Context {
 			model.setGroupId(engine.getGroupId());
 			model.setVersion(engine.getVersion());
 			model.setName(engine.getProjectName());
+			
+			Properties prop = model.getProperties();
+			prop.put("main.class", engine.getGroupId()+"App.class");
+			model.setProperties(prop);
+			
+			model.getBuild().setFinalName(engine.getProjectName());
 			
 			MavenXpp3Writer out = new MavenXpp3Writer();
 			out.write(new FileOutputStream(new File(project, "pom.xml")), model);
