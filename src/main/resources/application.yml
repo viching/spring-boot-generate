@@ -1,0 +1,31 @@
+###logging
+logging:
+    file: portal-generate.log
+    level: 
+        com.viching.generate: debug
+        
+generator:
+  db: mysql
+  driverClass: com.mysql.jdbc.Driver
+  connectionURL: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+  user: root
+  password: root
+  projectName: test
+  groupId: com.viching.test
+  artifactId: test
+  version: 1.0
+  tables: ALL
+  ext: true
+  needEnum: false
+  service: false
+  controller: false
+  enumRoot: com.viching.core.EnumRoot
+  enumTypeHandler: com.viching.bootstrap.typehandler.EnumTypeHandler
+  paging: com.viching.bootstrap.plugin.Paging
+  pagingProvider: com.viching.bootstrap.plugin.QueryUtil
+  idGenerator: com.viching.bootstrap.plugin.IDGenerator
+  pagingInterceptor: com.viching.bootstrap.plugin.PageInterceptor
+  superIService: com.viching.bootstrap.service.IGenericService
+  superService: com.viching.bootstrap.service.GenericService
+  root: d:/mybatis/pool
+  filter: modules,rights,roles,role_right,user_role
